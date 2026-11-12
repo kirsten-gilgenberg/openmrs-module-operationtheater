@@ -38,6 +38,11 @@ public class SurgicalBlockServiceImpl extends BaseOpenmrsService implements Surg
 	
 	static final String SURGICAL_ORDER_CONCEPT_UUID_GP = "operationtheater.surgicalOrderConceptUuid";
 	
+	// Privilege names owned by bedmanagement (see @Authorized on BedManagementService); it exports no constants.
+	private static final String BED_MANAGEMENT_GET_ADMISSION_LOCATIONS = "Get Admission Locations";
+	
+	private static final String BED_MANAGEMENT_GET_BEDS = "Get Beds";
+	
 	SurgicalBlockDAO surgicalBlockDAO;
 	
 	private OrderService orderService;
@@ -154,7 +159,7 @@ public class SurgicalBlockServiceImpl extends BaseOpenmrsService implements Surg
 		    PrivilegeConstants.GET_VISITS, PrivilegeConstants.GET_VISIT_TYPES, PrivilegeConstants.ADD_VISITS,
 		    PrivilegeConstants.GET_ORDER_TYPES, PrivilegeConstants.ADD_ORDERS, PrivilegeConstants.GET_CONCEPTS,
 		    PrivilegeConstants.GET_CARE_SETTINGS, PrivilegeConstants.GET_VISIT_ATTRIBUTE_TYPES,
-		    PrivilegeConstants.GET_GLOBAL_PROPERTIES, "Get Admission Locations", "Get Beds");
+		    PrivilegeConstants.GET_GLOBAL_PROPERTIES, BED_MANAGEMENT_GET_ADMISSION_LOCATIONS, BED_MANAGEMENT_GET_BEDS);
 		privileges.forEach(Context::addProxyPrivilege);
 		try {
 			createAndLinkSurgeryOrderWithPrivileges(appointment, block);
