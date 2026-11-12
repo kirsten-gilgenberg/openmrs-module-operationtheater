@@ -24,7 +24,8 @@
 	<properties>
 		<openmrsPlatformVersion>2.8.9</openmrsPlatformVersion>
 		<openmrsLegacyUiVersion>2.0.0</openmrsLegacyUiVersion>
-		<webservices.restVersion>3.6.0-SNAPSHOT</webservices.restVersion>
+		<webservices.restVersion>3.6.0</webservices.restVersion>
+		<!-- Interim SNAPSHOT pins matching the omrs-2.8 distro; repin to finals before a release cut (BAH-5084) -->
 		<bedmanagementVersion>7.3.0-SNAPSHOT</bedmanagementVersion>
 		<javaxServletVersion>4.0.1</javaxServletVersion>
 		<openmrsAtomfeedVersion>2.7.0-SNAPSHOT</openmrsAtomfeedVersion>
