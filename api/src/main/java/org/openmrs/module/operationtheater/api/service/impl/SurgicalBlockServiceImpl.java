@@ -152,6 +152,9 @@ public class SurgicalBlockServiceImpl extends BaseOpenmrsService implements Surg
 		// BED_MANAGEMENT_GET_* aren't OpenMRS core privileges: they're required by bedmanagement's
 		// VisitWithBedPatientAssignmentValidator, which is registered as a global Visit validator
 		// and so runs against ANY new visit, including the one ADD_VISITS/saveEncounter triggers here.
+		// bedmanagement's VisitWithBedPatientAssignmentSaveHandler (needs "Assign Beds" and
+		// "Edit Admission Locations") is deliberately not covered: it only acts on visits saved with a
+		// stopDatetime, and the visit created here is always open.
 		List<String> privileges = Arrays.asList(PrivilegeConstants.GET_ENCOUNTER_TYPES, PrivilegeConstants.ADD_ENCOUNTERS,
 		    PrivilegeConstants.GET_VISITS, PrivilegeConstants.GET_VISIT_TYPES, PrivilegeConstants.ADD_VISITS,
 		    PrivilegeConstants.GET_ORDER_TYPES, PrivilegeConstants.ADD_ORDERS, PrivilegeConstants.GET_CONCEPTS,
