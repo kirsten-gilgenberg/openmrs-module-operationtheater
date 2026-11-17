@@ -25,6 +25,9 @@
 		<openmrsPlatformVersion>2.8.9</openmrsPlatformVersion>
 		<openmrsLegacyUiVersion>2.0.0</openmrsLegacyUiVersion>
 		<webservices.restVersion>3.6.0</webservices.restVersion>
+		<!-- Runtime minimum for config.xml require_module. A -SNAPSHOT floor is satisfied by both the omrs-2.8 distro's
+		     3.6.0-SNAPSHOT and the 3.6.0 release; requiring the release would refuse to start on the distro (BAH-5084) -->
+		<webservices.restRequiredVersion>3.6.0-SNAPSHOT</webservices.restRequiredVersion>
 		<!-- Interim SNAPSHOT pins matching the omrs-2.8 distro; repin to finals before a release cut (BAH-5084) -->
 		<bedmanagementVersion>7.3.0-SNAPSHOT</bedmanagementVersion>
 		<javaxServletVersion>4.0.1</javaxServletVersion>
